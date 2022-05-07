@@ -1,0 +1,117 @@
+NECULA EDUARD-IONUT 322 CA @2020
+
+					~Tema 1 PC~
+
+Problema 1 - On the fly analysis
+
+	 *Programul citeste de la STDIN un numar de copaci, apoi citeste copacii. 
+	 *Programul pentru a putea gasi copacii speciali, se foloseste de urmatorul
+		rationament: 
+		a) Primii 2 copaci cititi, se vor memora in variabilele "primul_copac" si
+			"al_doilea_copac". Acestia nu au cum sa fie copaci speciali.
+		b) Atunci cand se va citi al treilea copac (daca exista), se va memora
+			in variabila "copac".
+		c) Programul incepe sa determine daca "al_doilea_copac" este mai mare 
+			decat "primul_copac" si decat copac, pentru a afla daca este special. 
+		d) Copacii speciali se aduna in variabila "suma_copaci_specili" si se 
+			numar in variabila "nr_copaci_speciali". 
+		e) In acelasi timp, se determina copacul minim de pe pozitie para si 
+			copacul maxim de pe pozitie impara. 
+		f) La finalul iteratiei. In "primul_copac" se pune "al_doilea_copac",
+			iar in "al_doilea_copac" se pune "copac". Astfel, programul
+			memoreaza tot timpul (pentru nr copaci >= 3), 3 copaci.
+	*Programul afiseaza:
+		a) Suma copacilor speciali.
+		b) Media aritmetica a copacilor speciali. 
+		c) Copacul special maxim de pe pozitie impara.
+		d) Copacul special minim de pe pozitie para.
+	
+	Observatie: La final de tot dupa int main(void) {...} exista o linie goala,
+					ce nu trebuie stearsa.
+
+
+
+Problema 2 - Proprietăti ale numerelor naturale
+
+	* Programul citeste de la STDIN un numar.
+	* Dupa citire, numarului i se vor aplica urmatoare transformari:
+		a) Cu ajutorul functiei "int nr_ordonat_cresc(int numar)", cifrele 
+			numarului vor fi ordonate crescator: 9870 devine 789. Cifra 0 va 
+			fi ignorata. Functia se foloseste de o alta functie auxiliara:
+			"int numar_cifre_fara_zero(int nr)" ce numara cifrele numarului,
+			diferite de zero. 
+		b) Cu ajutorul functiei "int nr_ordonat_desc(int numar)", cifrele 
+			numarului voi fi ordonate descrescator: 1230 devine 3210. 
+			Functia se foloseste de o alta functie auxiliara 
+			"int numar_cifre(int nr)", ce numara cifrele numarului.
+		c) Numere obtinute de la pasul a) si pasul b) vor fi scazute, iar
+			numarul rezultat va trece prin pasul a) b) si c) timp de 100 de ori
+	* Se va obtine un vector cu 100 de elemente. In acest vector se va cauta 
+		primul numar care se repeta, iar daca se gaseste acesta, pozitia lui va 
+		fi memorata.
+	* Programul afiseaza cate numere sunt pana in numerele periodice
+	* Programul afiseaza numerele din perioada, fara sa se repete.
+
+	Observatie: La final de tot dupa int main(void) {...} exista o linie goala,
+					ce nu trebuie stearsa.
+
+
+
+Problema 3 - Perfectionarea punctajelor
+
+	* Programul citeste de la STDIN: 
+		a) Numarul de materii
+		b) Punctajul pe fiecare materie
+		c) Creditele materiei
+		d) Punctajul minim necesar
+	* In variabila "punctaj_initial", se va pune punctajul initial.
+	* Programul refoloseste pentru eficienta memoriei, vectorul pentru credite 
+		materii. In acesta se va pune respectand formula: 
+		"credite_materii[i] * (NOTA_10 - punctaj_materii[i]);", pentru fiecare
+		element in parte.
+	* Se va sorta noul vector obtinut, crescator
+	* La punctajul initial, se va aduna (daca este nevoie), prima valoare din 
+		vector, pana cand punctajul initial va fi mai mare sau egal ca punctajul
+		minim necesar. Pentru fiecare materia adaugata la vector, va creste
+		contorul "nr_materii_necesare".
+	* Programul afiseaza la final, nr_materii_necesare, reprezentand numarul
+		de materii necesare pentru a lua bursa un copil. 
+
+	Observatie: La final de tot dupa int main(void) {...} exista o linie goala,
+					ce nu trebuie stearsa.
+
+
+
+Problema 4 - Nonogram checker
+	
+	* Programul citeste de la STDIN: 
+		a) Numarul de puzzle
+		b) Numarul de linii
+		c) Numarul de coloane
+		d) Pentru fiecare linie
+			1) Se citeste de pe prima pozitie, cate elemente voi citi in 
+				continuare. Acestea reprezinta lungimea pieselor de pe linie
+		e)Pentru fiecare coloana
+			1) Se citeste de pe prima pozitie, cate elemente voi citi in 
+				continuare. Acestea reprezinta lungimea pieselor de pe coloana.
+		f) Se citeste matricea puzzle.
+		g) Programul care spune daca este corect sau nu functioneaza astfel: 
+			1) Se aduna elementele de pe fiecare linie in parte, si se pun
+				intr-un vector: "sum_lin_vect[]"
+			2) Se aduna elementele de pe fiecare colona in parte, si se pun
+				intr-un vector: "sum_col_vect[]"
+			3) Se aduna elementele de pe fiecare linie din puzzle in parte, si 
+				se pun intr-un vector: "sum_lin_puz[]"
+			4) Se aduna elementele de pe fiecare coloana din puzzle in parte, si
+				se pun intr-un vector: "sum_col_puz[]"
+			5) Daca in vectorul linie comparat cu vectorul linie din puzzle se 
+				gaseste ceva diferit se creste contorul "contor_corecte_lin"
+			6) Daca in vectorul coloana comparat cu vectorul coloana din puzzle
+				se gaseste ceva diferit se creste contorul "contor_corecte_col"
+			7) Daca cei 2 contori raman 0, inseamna ca nu exista diferente,
+				asa ca se va afisa "Corect", altfel "Gresit".
+			8) Tot ce a fost citit de la STDIN se va egala cu 0, pentru a putea
+				trece (daca este nevoie) la urmatorul puzzle.
+
+	*Observatie: La final de tot dupa int main(void) {...} exista o linie goala,
+					ce nu trebuie stearsa.
